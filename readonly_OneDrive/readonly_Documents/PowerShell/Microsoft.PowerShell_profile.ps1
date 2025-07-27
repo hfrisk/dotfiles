@@ -1,3 +1,8 @@
+# ENV 
+#-------------------------
+$Env:EDITOR = "C:\Program Files\Neovim\bin\nvim.exe"
+$Env:VISUAL = "C:\Program Files\Neovim\bin\nvim.exe"
+
 # ALIASES
 #-------------------------
 Set-Alias -Name ls -Value eza -Option AllScope
