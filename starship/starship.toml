@@ -1,0 +1,47 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Use custom format
+format = '''
+[┌\($username@$hostname\)─\($character\)─\($time\)](white)
+([│](white)$rust$package$git_state$git_commit$git_metrics$git_status
+)[└─\($directory( $git_branch)\)>](white)'''
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+[character]
+format = '$symbol'
+success_symbol = '[✓](bold green)'
+error_symbol = '[X](red)'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)'
+
+[hostname]
+ssh_only = false
+ssh_symbol = '🌐'
+format = '[$ssh_symbol$hostname](cyan)'
+trim_at = '.companyname.com'
+disabled = false
+
+[username]
+style_user = 'cyan'
+style_root = 'bold red'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+aliases = { "corpuser034g" = "matchai" }
+
+[time]
+disabled = false
+format = '🕙 [$time]($style)'
+time_format = '%T'
+utc_time_offset = '-5'
+
+[git_metrics]
+disabled = false
