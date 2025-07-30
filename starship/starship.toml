@@ -8,7 +8,7 @@ add_newline = false
 format = '''
 [┌\($username@$hostname\)─\($character\)─\($time\)](white)
 ([│](white)$rust$package$git_state$git_commit$git_metrics$git_status
-)[└─\($directory( $git_branch)\)>](white)'''
+)[└─\($directory( $git_branch)\)> ](white)'''
 
 # Disable the package module, hiding it from the prompt completely
 [package]
