@@ -21,5 +21,13 @@ config.colors = {
     brights = {"#42414D", "#FF9AA2", "#54FFBD", "#FFEA80", "#0060DF", "#AB71FF", "#00DDFF", "#FFFFFF"}
 }
 
+-- Tab bar configuration
+config.enable_tab_bar = true
+-- config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = false
+-- config.use_fancy_tab_bar = false
+
+
+
 --FINAL
 return config
