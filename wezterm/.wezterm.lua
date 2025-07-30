@@ -57,5 +57,7 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover)
     }
 end)
 
+config.font = wezterm.font('Cascadia Mono NF')
+
 --FINAL
 return config
