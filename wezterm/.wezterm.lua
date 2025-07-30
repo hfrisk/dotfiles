@@ -25,9 +25,37 @@ config.colors = {
 config.enable_tab_bar = true
 -- config.hide_tab_bar_if_only_one_tab = true
 config.show_tab_index_in_tab_bar = false
--- config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = false
+config.colors.tab_bar = {
+    background = config.colors.background, --config.window_background_image and "rgba(0, 0, 0, 0)" or transparent_bg,
+    new_tab = { fg_color = config.colors.background, bg_color = config.colors.brights[6] },
+    new_tab_hover = { fg_color = config.colors.background, bg_color = config.colors.foreground },
+}
 
 
+wezterm.on("format-tab-title", function(tab, _, _, _, hover)
+    local background = config.colors.brights[1]
+    local foreground = config.colors.foreground
+
+    if tab.is_active then
+        background = config.colors.brights[7]
+        foreground = config.colors.background
+    elseif hover then
+        background = config.colors.brights[8]
+        foreground = config.colors.background
+    end
+
+    local title = tostring(tab.tab_index + 1)
+    return {
+        { Foreground = { Color = background } },
+        { Text = "█" },
+        { Background = { Color = background } },
+        { Foreground = { Color = foreground } },
+        { Text = title },
+        { Foreground = { Color = background } },
+        { Text = "█" },
+    }
+end)
 
 --FINAL
 return config
