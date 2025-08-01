@@ -1,0 +1,5 @@
+[filetype]
+rules = [
+    {name = "*", fg = "white"},
+    {name = "*/", fg = "lightyellow"}
+]
