@@ -61,6 +61,10 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+#fuzzy search, open yazi
+function fzo ($directory) {
+    y $(fzf -d $directory)
+}
 # STARSHIP
 #-------------------------
 Invoke-Expression (&starship init powershell)
