@@ -1,10 +1,13 @@
 # ENV 
 #-------------------------
-$EDITOR = "C:\Program Files\Neovim\bin\nvim.exe"
-$VISUAL = "C:\Program Files\Neovim\bin\nvim.exe"
+$Env:EDITOR = "C:/Program Files/Neovim/bin/nvim.exe"
+$Env:VISUAL = "C:/Program Files/Neovim/bin/nvim.exe"
 
 # jdk
 $JAVA_HOME = "C:\Users\linku\.jdks\openjdk-24.0.1"
+
+$Env:YAZI_CONFIG_HOME = "%UserProfile%\.dots\yazi"
+$Env:YAZI_FILE_ONE = "C:\Program Files\Git\usr\bin\file.exe"
 
 # ALIASES
 #-------------------------
@@ -46,6 +49,17 @@ function make-link ($target, $link) {
 function move-and-link ($origin, $target) {
     Move-Item -Path $origin -Destination $target
     make-link $target $origin
+}
+
+#yazi shell wrapper
+function y {
+    $tmp = (New-TemporaryFile).FullName
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp -Encoding UTF8
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath (Resolve-Path -LiteralPath $cwd).Path
+    }
+    Remove-Item -Path $tmp
 }
 # STARSHIP
 #-------------------------
