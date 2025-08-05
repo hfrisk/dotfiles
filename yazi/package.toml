@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "de53d90"
+hash = "f3029f63b5683803f46980438a560ba9"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "de53d90"
+hash = "604aa5edd8a11f9290fcb6d42d4f4ee0"
+
+[flavor]
+deps = []
