@@ -1,7 +1,7 @@
 # ENV 
 #-------------------------
-$Env:EDITOR = "C:/Program Files/Neovim/bin/nvim.exe"
-$Env:VISUAL = "C:/Program Files/Neovim/bin/nvim.exe"
+$Env:EDITOR = "nvim"
+$Env:VISUAL = "nvim"
 
 # jdk
 $JAVA_HOME = "C:\Users\linku\.jdks\openjdk-24.0.1"
