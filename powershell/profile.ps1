@@ -37,6 +37,10 @@ Set-PSReadLineKeyHandler -Key Tab `
     }
 }
 
+# SCOOP/SFSU HOOKS
+# ------------------------
+Invoke-Expression (&sfsu hook)
+
 # USEFUL FUNCTIONS
 # ------------------------
 
