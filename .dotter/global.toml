@@ -4,6 +4,14 @@
 depends = []
 
 [default.files]
+"fastfetch.jsonc" = "~/.config/fastfetch/config,jsonc"
+# komorebi = ""
+# nvim = ""
+# powershell = ""
+# starship = ""
+# wezterm = ""
+# yasb = ""
+# yazi = ""
 
 [default.variables]
 
