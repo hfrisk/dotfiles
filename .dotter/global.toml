@@ -13,7 +13,7 @@ depends = []
 # wezterm = ""
 # yasb = ""
 # yazi = ""
-
+zshrc = "~/.zshrc"
 [default.variables]
 
 [settings]
