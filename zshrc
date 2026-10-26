@@ -34,16 +34,27 @@ setopt COMPLETE_IN_WORD
 #colors
 
 
-# vars
+## functions + aliases
+# mkdir + cd into it
+function mkcd() {
+	mkdir $* && cd $_
+}
 
+# cd to root of git repo
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
+# https://gist.github.com/AppleBoiy/04a249b6f64fd0fe1744aff759a0563b
+#ls style eza
+alias ls='eza --group-directories-first --icons=auto --color=auto'
+alias fzf='fzf --popup'
+alias fd="fd -H"
+
+# vars
 HISTFILE=~/.zsh_history
 export SSH_AUTH_SOCK=~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-# https://gist.github.com/AppleBoiy/04a249b6f64fd0fe1744aff759a0563b
-alias ls='eza --group-directories-first --icons=auto --color=auto'
-alias fzf='fzf --popup'
 
 eval "$(zoxide init zsh --cmd cd)"
 
@@ -56,7 +67,6 @@ ZELLIJ_AUTO_EXIT=true
 ZJ_SESSIONS=$(zellij list-sessions -ns)
 NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
 
-alias fd="fd -H"
 
 ## if [[ -z "$ZELLIJ" ]]; then
     #if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
