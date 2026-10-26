@@ -1,0 +1,7 @@
+# Template local file, copy to local.toml and make machine-specific changes
+includes = []
+packages = ["default"]
+
+[files]
+
+[variables]
